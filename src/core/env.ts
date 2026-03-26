@@ -1,6 +1,15 @@
 import { parseBool } from '@waha/helpers';
 
 //
+// Sessions
+//
+
+const rawMaxSessions = process.env.WAHA_MAX_SESSIONS;
+export const WAHA_MAX_SESSIONS: number = rawMaxSessions
+  ? parseInt(rawMaxSessions, 10)
+  : Number.POSITIVE_INFINITY;
+
+//
 // Presence
 //
 
